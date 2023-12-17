@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D9718C12A2C8C05442E64EB /* Pods_NewTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C3CF9ED8F18ADF242848B /* Pods_NewTestApp.framework */; };
+		56F75CF72B2ED32E00C71121 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F75CF62B2ED32E00C71121 /* RatingView.swift */; };
+		56F75CFA2B2ED59200C71121 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F75CF92B2ED59200C71121 /* SFProDisplay-Medium.ttf */; };
+		56F75CFC2B2EEF7900C71121 /* SFProDisplaySemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F75CFB2B2EEF7900C71121 /* SFProDisplaySemibold.otf */; };
+		56F75CFE2B2EEFA200C71121 /* SFProDisplayRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F75CFD2B2EEFA200C71121 /* SFProDisplayRegular.otf */; };
+		56F75D002B2EF18800C71121 /* HotelContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F75CFF2B2EF18800C71121 /* HotelContentView.swift */; };
 		56F855832B2DAB6500588B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F855822B2DAB6500588B54 /* AppDelegate.swift */; };
 		56F855852B2DAB6500588B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F855842B2DAB6500588B54 /* SceneDelegate.swift */; };
-		56F855872B2DAB6500588B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F855862B2DAB6500588B54 /* ViewController.swift */; };
-		56F8558A2B2DAB6500588B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F855882B2DAB6500588B54 /* Main.storyboard */; };
+		56F855872B2DAB6500588B54 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F855862B2DAB6500588B54 /* HotelViewController.swift */; };
 		56F8558C2B2DAB6700588B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F8558B2B2DAB6700588B54 /* Assets.xcassets */; };
 		56F8558F2B2DAB6700588B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F8558D2B2DAB6700588B54 /* LaunchScreen.storyboard */; };
+		56F8559C2B2DAF7000588B54 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8559B2B2DAF7000588B54 /* ImageCarouselView.swift */; };
+		56F855A02B2DB2B700588B54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8559F2B2DB2B700588B54 /* NetworkService.swift */; };
+		56F855A22B2DBD6500588B54 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F855A12B2DBD6500588B54 /* Hotel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56F75CF62B2ED32E00C71121 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		56F75CF92B2ED59200C71121 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		56F75CFB2B2EEF7900C71121 /* SFProDisplaySemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProDisplaySemibold.otf; sourceTree = "<group>"; };
+		56F75CFD2B2EEFA200C71121 /* SFProDisplayRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProDisplayRegular.otf; sourceTree = "<group>"; };
+		56F75CFF2B2EF18800C71121 /* HotelContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelContentView.swift; sourceTree = "<group>"; };
 		56F8557F2B2DAB6500588B54 /* NewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F855822B2DAB6500588B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F855842B2DAB6500588B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		56F855862B2DAB6500588B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		56F855892B2DAB6500588B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56F855862B2DAB6500588B54 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
 		56F8558B2B2DAB6700588B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56F8558E2B2DAB6700588B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56F855902B2DAB6700588B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F8559B2B2DAF7000588B54 /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
+		56F8559F2B2DB2B700588B54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		56F855A12B2DBD6500588B54 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		72D49189DD676EB9B8AE2AE3 /* Pods-NewTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTestApp.debug.xcconfig"; path = "Target Support Files/Pods-NewTestApp/Pods-NewTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		83F68F6B7076C57B7922D65E /* Pods-NewTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTestApp.release.xcconfig"; path = "Target Support Files/Pods-NewTestApp/Pods-NewTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		966C3CF9ED8F18ADF242848B /* Pods_NewTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9718C12A2C8C05442E64EB /* Pods_NewTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56F75CF82B2ED58900C71121 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				56F75CFD2B2EEFA200C71121 /* SFProDisplayRegular.otf */,
+				56F75CFB2B2EEF7900C71121 /* SFProDisplaySemibold.otf */,
+				56F75CF92B2ED59200C71121 /* SFProDisplay-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		56F855762B2DAB6500588B54 = {
 			isa = PBXGroup;
 			children = (
 				56F855812B2DAB6500588B54 /* NewTestApp */,
 				56F855802B2DAB6500588B54 /* Products */,
+				DDE456D71E14769116C617AE /* Pods */,
+				5C773C6A3766260E1F10326A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +87,77 @@
 		56F855812B2DAB6500588B54 /* NewTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				56F855822B2DAB6500588B54 /* AppDelegate.swift */,
-				56F855842B2DAB6500588B54 /* SceneDelegate.swift */,
-				56F855862B2DAB6500588B54 /* ViewController.swift */,
-				56F855882B2DAB6500588B54 /* Main.storyboard */,
-				56F8558B2B2DAB6700588B54 /* Assets.xcassets */,
-				56F8558D2B2DAB6700588B54 /* LaunchScreen.storyboard */,
+				56F8559A2B2DAF0900588B54 /* Model */,
+				56F855992B2DAF0100588B54 /* Views */,
+				56F855962B2DAC7200588B54 /* Scenes */,
+				56F855982B2DAEF900588B54 /* Controllers */,
+				56F855972B2DAC8500588B54 /* resourse */,
 				56F855902B2DAB6700588B54 /* Info.plist */,
+				56F8559F2B2DB2B700588B54 /* NetworkService.swift */,
 			);
 			path = NewTestApp;
+			sourceTree = "<group>";
+		};
+		56F855962B2DAC7200588B54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				56F855822B2DAB6500588B54 /* AppDelegate.swift */,
+				56F855842B2DAB6500588B54 /* SceneDelegate.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		56F855972B2DAC8500588B54 /* resourse */ = {
+			isa = PBXGroup;
+			children = (
+				56F75CF82B2ED58900C71121 /* Fonts */,
+				56F8558B2B2DAB6700588B54 /* Assets.xcassets */,
+				56F8558D2B2DAB6700588B54 /* LaunchScreen.storyboard */,
+			);
+			path = resourse;
+			sourceTree = "<group>";
+		};
+		56F855982B2DAEF900588B54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56F855862B2DAB6500588B54 /* HotelViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		56F855992B2DAF0100588B54 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56F8559B2B2DAF7000588B54 /* ImageCarouselView.swift */,
+				56F75CF62B2ED32E00C71121 /* RatingView.swift */,
+				56F75CFF2B2EF18800C71121 /* HotelContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56F8559A2B2DAF0900588B54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56F855A12B2DBD6500588B54 /* Hotel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C773C6A3766260E1F10326A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				966C3CF9ED8F18ADF242848B /* Pods_NewTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDE456D71E14769116C617AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72D49189DD676EB9B8AE2AE3 /* Pods-NewTestApp.debug.xcconfig */,
+				83F68F6B7076C57B7922D65E /* Pods-NewTestApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56F855932B2DAB6700588B54 /* Build configuration list for PBXNativeTarget "NewTestApp" */;
 			buildPhases = (
+				2C67E499FE85E56F6CB9B311 /* [CP] Check Pods Manifest.lock */,
 				56F8557B2B2DAB6500588B54 /* Sources */,
 				56F8557C2B2DAB6500588B54 /* Frameworks */,
 				56F8557D2B2DAB6500588B54 /* Resources */,
+				CDC17ABA1BC6FD8CFA90ECD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,36 +220,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F75CFC2B2EEF7900C71121 /* SFProDisplaySemibold.otf in Resources */,
 				56F8558F2B2DAB6700588B54 /* LaunchScreen.storyboard in Resources */,
+				56F75CFA2B2ED59200C71121 /* SFProDisplay-Medium.ttf in Resources */,
+				56F75CFE2B2EEFA200C71121 /* SFProDisplayRegular.otf in Resources */,
 				56F8558C2B2DAB6700588B54 /* Assets.xcassets in Resources */,
-				56F8558A2B2DAB6500588B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C67E499FE85E56F6CB9B311 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDC17ABA1BC6FD8CFA90ECD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewTestApp/Pods-NewTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewTestApp/Pods-NewTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewTestApp/Pods-NewTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56F8557B2B2DAB6500588B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56F855872B2DAB6500588B54 /* ViewController.swift in Sources */,
+				56F855A22B2DBD6500588B54 /* Hotel.swift in Sources */,
+				56F855872B2DAB6500588B54 /* HotelViewController.swift in Sources */,
 				56F855832B2DAB6500588B54 /* AppDelegate.swift in Sources */,
+				56F75D002B2EF18800C71121 /* HotelContentView.swift in Sources */,
+				56F75CF72B2ED32E00C71121 /* RatingView.swift in Sources */,
 				56F855852B2DAB6500588B54 /* SceneDelegate.swift in Sources */,
+				56F855A02B2DB2B700588B54 /* NetworkService.swift in Sources */,
+				56F8559C2B2DAF7000588B54 /* ImageCarouselView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		56F855882B2DAB6500588B54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56F855892B2DAB6500588B54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		56F8558D2B2DAB6700588B54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -203,7 +339,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +402,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +423,7 @@
 		};
 		56F855942B2DAB6700588B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D49189DD676EB9B8AE2AE3 /* Pods-NewTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,7 +433,6 @@
 				INFOPLIST_FILE = NewTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,6 +450,7 @@
 		};
 		56F855952B2DAB6700588B54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83F68F6B7076C57B7922D65E /* Pods-NewTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,7 +460,6 @@
 				INFOPLIST_FILE = NewTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
