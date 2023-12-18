@@ -12,15 +12,24 @@ class HotelViewController: UIViewController {
     //MARK: -Variables-
     private let scrollViewH: UIScrollView = {
         let scr = UIScrollView()
+        scr.isScrollEnabled = true
+        scr.showsVerticalScrollIndicator = false
         return scr
     }()
     private let contentView: HotelContentView = {
-        // Set up scrollView and contentView
         let view = HotelContentView()
         return view
     }()
     
-   
+    private let hotelDetailView: HotelDetailContentView = {
+        let view = HotelDetailContentView()
+        return view
+    }()
+    
+    private let hoteBottom: HotelBottomView = {
+        let view = HotelBottomView()
+        return view
+    }()
     
     var hotel: Hotel?
     //MARK: -LifeCycle-
@@ -56,6 +65,8 @@ class HotelViewController: UIViewController {
             self.contentView.addressLabel.text = hotelData.adress
             self.contentView.priceLabel.text = "от \(hotelData.minimal_price) ₽"
             self.contentView.forTourLabel.text = "\(hotelData.price_for_it)"
+            self.hotelDetailView.setupPeculiarities(labels: hotelData.about_the_hotel.peculiarities)
+            self.hotelDetailView.descriptionTextLbl.text = hotelData.about_the_hotel.description
         }
     }
     
@@ -88,21 +99,42 @@ extension HotelViewController {
         view.backgroundColor = .systemGray
         view.addSubview(scrollViewH)
         scrollViewH.addSubview(contentView)
-        
-        
+        scrollViewH.addSubview(hotelDetailView)
+        scrollViewH.addSubview(hoteBottom)
         setUpConstraints()
     }
     
     private func setUpConstraints() {
         scrollViewH.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalTo(view)
+//            make.top.equalToSuperview()
+//            make.bottom.equalToSuperview()
+//            make.leading.equalToSuperview()
+//            make.bottom.equalTo(hoteBottom.snp.top).offset(-12)
         }
-                
+        
         contentView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.trailing.leading.equalToSuperview()
+            make.top.leading.trailing.equalToSuperview()
             make.width.equalTo(scrollViewH.snp.width)
             make.height.equalTo(500)
+        }
+        
+        hotelDetailView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+            make.width.equalTo(scrollViewH.snp.width)
+            // Set a height constraint only if you know the content height
+            // If the content is dynamic, you might want to remove this
+            make.height.equalTo(480)
+            // This is the key part: the bottom of the last view should define the scroll view's content size
+            make.bottom.equalToSuperview()
+        }
+        
+        hoteBottom.snp.makeConstraints { make in
+            make.top.equalTo(hotelDetailView.snp.bottom).offset(12)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(88)
         }
     }
 }

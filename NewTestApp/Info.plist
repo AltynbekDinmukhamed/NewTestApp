@@ -6,7 +6,7 @@
 	<array>
 		<string>SFProDisplay-Medium.ttf</string>
 		<string>SFProDisplaySemibold.otf</string>
-		<string>SFProDisplayRegular.otf</string>
+		<string>SFProDisplay-Regular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

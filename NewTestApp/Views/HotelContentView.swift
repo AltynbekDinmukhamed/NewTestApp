@@ -21,6 +21,7 @@ class HotelContentView: UIView {
     let imageCarouselView: ImageCarouselView = {
         let view = ImageCarouselView()
         view.backgroundColor = .systemGray
+        view.clipsToBounds = true
         view.layer.cornerRadius = 15
         return view
     }()
