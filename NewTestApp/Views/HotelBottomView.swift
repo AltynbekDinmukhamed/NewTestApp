@@ -11,13 +11,14 @@ import SnapKit
 
 class HotelBottomView: UIView {
     //MARK: -Variabels-
-    let chooseNumberBtn: UIButton = {
+    lazy var chooseNumberBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("К выбору номера", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 16)
         btn.backgroundColor = .systemBlue
         btn.layer.cornerRadius = 15
+        btn.addTarget(self, action: #selector(chooseBtnTapped), for: .touchUpInside)
         return btn
     }()
     //MARK: -LifeCycle-
@@ -48,5 +49,12 @@ extension HotelBottomView {
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-28)
         }
+    }
+}
+
+extension HotelBottomView {
+    @objc private func chooseBtnTapped(_ sender: UIButton) {
+        let vc = NumberViewController()
+        
     }
 }

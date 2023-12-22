@@ -39,4 +39,30 @@ class NetworkService {
         }
         task.resume()
     }
+    
+    //MARK: -Fetching data for NumberViewController-
+    func fetchRoomData(completion: @escaping(RoomData?) -> Void) {
+        let urlString = "https://run.mocky.io/v3/8b532701-709e-4194-a41c-1a903af00195"
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "Unknown error")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let roomData = try JSONDecoder().decode(RoomData.self, from: data)
+                print(roomData)
+                completion(roomData)
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
 }
