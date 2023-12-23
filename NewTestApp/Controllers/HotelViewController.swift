@@ -37,6 +37,10 @@ class HotelViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         fetchHotelData()
+        
+        hoteBottom.onChooseNumberButtonTapped = {[weak self] in
+            self?.openNumberViewControllee()
+        }
     }
     //MARK: -Fucntions-
     
@@ -90,6 +94,12 @@ class HotelViewController: UIViewController {
                 completion(images)
             }
         }
+    }
+    ///MARK: -Functsion that open the new Number View Controller-
+    private func openNumberViewControllee() {
+        let numberViewController = NumberViewController()
+        navigationController?.pushViewController(numberViewController, animated: true)
+        
     }
 }
 //MARK: -Extension-

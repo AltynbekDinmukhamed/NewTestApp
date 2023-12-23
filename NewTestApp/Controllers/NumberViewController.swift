@@ -48,6 +48,7 @@ class NumberViewController: UIViewController {
 extension NumberViewController {
     private func setUpViews() {
         view.backgroundColor = .white
+        navigationController?.isNavigationBarHidden = false
         view.addSubview(table)
         setUpConstraints()
     }

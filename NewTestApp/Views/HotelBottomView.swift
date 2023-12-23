@@ -21,6 +21,8 @@ class HotelBottomView: UIView {
         btn.addTarget(self, action: #selector(chooseBtnTapped), for: .touchUpInside)
         return btn
     }()
+    ///MARK: closure that defined to open a new Controller
+    var onChooseNumberButtonTapped: (() -> Void)?
     //MARK: -LifeCycle-
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,7 +56,6 @@ extension HotelBottomView {
 
 extension HotelBottomView {
     @objc private func chooseBtnTapped(_ sender: UIButton) {
-        let vc = NumberViewController()
-        
+        onChooseNumberButtonTapped?()
     }
 }
