@@ -15,6 +15,8 @@ class BookingViewController: UIViewController {
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.isScrollEnabled = true
+        scrollView.backgroundColor = .systemGray
         return scrollView
     }()
     
@@ -30,12 +32,29 @@ class BookingViewController: UIViewController {
     
     let ticketDetailView: TicketDetail =  { 
         let view = TicketDetail()
+        view.layer.cornerRadius = 15
         return view
     }()
     
     let infoAboutCustomer: InfoAboutCustomer = {
         let view = InfoAboutCustomer()
+        view.layer.cornerRadius = 15
         return view
+    }()
+    
+    let passengerInfoField: PassengerInfoField = {
+        let lbl = PassengerInfoField()
+        lbl.backgroundColor = .white
+        lbl.layer.cornerRadius = 15
+        return lbl
+    }()
+    
+    let secondPassengerInfoField: PassengerInfoField = {
+        let field = PassengerInfoField()
+        field.backgroundColor = .white
+        field.layer.cornerRadius = 15
+        field.collapse()
+        return field
     }()
     
     var bookData: BookData?
@@ -77,12 +96,17 @@ extension BookingViewController {
         contentView.addSubview(bookingTopView)
         contentView.addSubview(ticketDetailView)
         contentView.addSubview(infoAboutCustomer)
+        contentView.addSubview(passengerInfoField)
+        contentView.addSubview(secondPassengerInfoField)
         setUpConstraints()
     }
     
     private func setUpConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { make in
@@ -93,7 +117,7 @@ extension BookingViewController {
         bookingTopView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(8)
             make.leading.trailing.equalTo(contentView)
-            make.height.equalTo(120)
+            make.height.equalTo(135)
         }
         
         ticketDetailView.snp.makeConstraints { make in
@@ -106,6 +130,18 @@ extension BookingViewController {
             make.top.equalTo(ticketDetailView.snp.bottom).offset(8)
             make.leading.trailing.equalTo(contentView)
             make.height.equalTo(232)
+        }
+        
+        passengerInfoField.snp.makeConstraints { make in
+            make.top.equalTo(infoAboutCustomer.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        secondPassengerInfoField.snp.makeConstraints { make in
+            make.top.equalTo(passengerInfoField.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+                // Here, do not set a fixed height for the collapsed state
+            make.bottom.equalTo(contentView).offset(-8) // Make sure this is the last element
         }
     }
 }

@@ -39,6 +39,15 @@ class InfoAboutCustomer: UIView {
         txt.keyboardType = .emailAddress
         return txt
     }()
+    
+    let termAndConditionLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = UIColor(red: 0.51, green: 0.529, blue: 0.588, alpha: 1)
+        lbl.font = UIFont(name: "SFProDisplay-Regular", size: 14)
+        lbl.numberOfLines = 0
+        lbl.text = "Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту"
+        return lbl
+    }()
     //MARK: -LifeCycle-
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,9 +64,11 @@ class InfoAboutCustomer: UIView {
     //MARK: -setupViews()-
 extension InfoAboutCustomer {
     private func setUpViews() {
+        backgroundColor = .white
         addSubview(titleLbl)
         addSubview(nameTxtField)
         addSubview(emailTxtField)
+        addSubview(termAndConditionLbl)
         setUpConstraints()
     }
     
@@ -77,6 +88,11 @@ extension InfoAboutCustomer {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(52)
+        }
+        termAndConditionLbl.snp.makeConstraints { make in
+            make.top.equalTo(emailTxtField.snp.bottom).offset(8)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
     }
 }
