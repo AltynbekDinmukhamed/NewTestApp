@@ -34,6 +34,7 @@ class NumberTableViewCell: UITableViewCell {
         stack.distribution = .fillProportionally
         stack.spacing = 8
         stack.alignment = .leading
+        stack.isUserInteractionEnabled = true
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -64,15 +65,19 @@ class NumberTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    let chooseBtn: UIButton = {
+    lazy var chooseBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("Выбрать номер", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 16)
         btn.backgroundColor = .systemBlue
         btn.layer.cornerRadius = 15
+        btn.isExclusiveTouch = true
+        btn.addTarget(self, action: #selector(bookingVCOpen), for: .touchUpInside)
         return btn
     }()
+    
+    var onBookingButtonTapped: (() -> Void)?
     //MARK: -LifeCycle-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -92,6 +97,10 @@ class NumberTableViewCell: UITableViewCell {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let result = carouselImageView.hitTest(convert(point, to: carouselImageView), with: event) {
             return result
+        }
+        let pointForButton = chooseBtn.convert(point, from: self)
+        if chooseBtn.bounds.contains(pointForButton) {
+            return chooseBtn
         }
         return super.hitTest(point, with: event)
     }
@@ -226,5 +235,12 @@ extension NumberTableViewCell {
             make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(48)
         }
+    }
+}
+
+extension NumberTableViewCell {
+    @objc private func bookingVCOpen(_ sender: UIButton) {
+        print("Booking button tapped")
+        onBookingButtonTapped?()
     }
 }

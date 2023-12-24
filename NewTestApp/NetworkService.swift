@@ -65,4 +65,29 @@ class NetworkService {
             }
         }.resume()
     }
+    
+    //MARK: -Fetching data for Book Daat-
+    func fetchBookInfo(completion: @escaping(BookData?) -> Void) {
+        let urlString = "https://run.mocky.io/v3/63866c74-d593-432c-af8e-f279d1a8d2ff"
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "Unknown error")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode(BookData.self, from: data)
+                completion(json)
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
 }

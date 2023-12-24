@@ -27,6 +27,7 @@ class NumberViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         fetchRoomData()
+        changeTheBackNavigationButton()
     }
     
     
@@ -41,6 +42,18 @@ class NumberViewController: UIViewController {
                 self.table.reloadData()
             }
         }
+    }
+    ///MARK:
+    private func changeTheBackNavigationButton() {
+        let backImage = UIImage(named: "backIcon")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    private func openBookingVc() {
+        let vc = BookingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -64,7 +77,7 @@ extension NumberViewController {
     //MARK: -Table View Delegate-
 extension NumberViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height / 1.48
+        return view.frame.size.height / 1.45
     }
 }
 
@@ -92,8 +105,18 @@ extension NumberViewController: UITableViewDataSource {
                 cell.nightLbl.text = room.price_per
             }
         }
+        cell.onBookingButtonTapped = { [weak self] in
+            print("Button tapped")
+            let bookingVC = BookingViewController()
+            self?.navigationController?.pushViewController(bookingVC, animated: true)
+        }
         return cell
     }
-    
-    
+}
+
+
+extension NumberViewController {
+    @objc private func backButtonTapped(_ sender: UIButton) { 
+        navigationController?.popViewController(animated: true)
+    }
 }

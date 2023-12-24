@@ -44,6 +44,7 @@ class ImageCarouselView: UIView, UIScrollViewDelegate {
             let imageView = UIImageView(image: img)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
+            imageView.isUserInteractionEnabled = false
             scrollView.addSubview(imageView)
             imageViews.append(imageView)
         }
