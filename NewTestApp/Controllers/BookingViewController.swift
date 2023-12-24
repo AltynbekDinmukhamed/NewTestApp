@@ -57,12 +57,30 @@ class BookingViewController: UIViewController {
         return field
     }()
     
+    let addTouristView: AddTouristView = {
+        let view = AddTouristView()
+        return view
+    }()
+    
+    let totalPrice: TotalPriceView = {
+        let view = TotalPriceView()
+        return view
+    }()
+    
+    let payBottomView: BottomButtonView = {
+        let view = BottomButtonView()
+        return view
+    }()
+    
     var bookData: BookData?
     //MARK: -Life Cycle-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
         fetchBookData()
+        payBottomView.openVc = { [weak self] in
+            self?.openVc()
+        }
     }
     
     //MARK: -functions-
@@ -82,7 +100,12 @@ class BookingViewController: UIViewController {
             self.bookingTopView.hotelName.text = "\(bookData.hotel_name)"
             self.bookingTopView.addressLabel.text = "\(bookData.hotel_adress)"
             self.ticketDetailView.bookData = bookData
+            self.totalPrice.priceDetails = bookData
         }
+    }
+    
+    private func openVc() {
+        navigationController?.pushViewController(CongratulationViewController(), animated: true)
     }
 }
 
@@ -92,21 +115,29 @@ extension BookingViewController {
         title = "Бронирование"
         view.backgroundColor = .white
         view.addSubview(scrollView)
+        view.addSubview(payBottomView)
         scrollView.addSubview(contentView)
         contentView.addSubview(bookingTopView)
         contentView.addSubview(ticketDetailView)
         contentView.addSubview(infoAboutCustomer)
         contentView.addSubview(passengerInfoField)
         contentView.addSubview(secondPassengerInfoField)
+        contentView.addSubview(addTouristView)
+        contentView.addSubview(totalPrice)
         setUpConstraints()
     }
     
     private func setUpConstraints() {
+        payBottomView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(88)
+        }
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(payBottomView.snp.top)
         }
         
         contentView.snp.makeConstraints { make in
@@ -140,8 +171,17 @@ extension BookingViewController {
         secondPassengerInfoField.snp.makeConstraints { make in
             make.top.equalTo(passengerInfoField.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview()
-                // Here, do not set a fixed height for the collapsed state
-            make.bottom.equalTo(contentView).offset(-8) // Make sure this is the last element
+        }
+        
+        addTouristView.snp.makeConstraints { make in
+            make.top.equalTo(secondPassengerInfoField.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        totalPrice.snp.makeConstraints { make in
+            make.top.equalTo(addTouristView.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(contentView).offset(-8)
         }
     }
 }
