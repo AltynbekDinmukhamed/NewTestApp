@@ -18,16 +18,19 @@ class HotelViewController: UIViewController {
     }()
     private let contentView: HotelContentView = {
         let view = HotelContentView()
+        view.layer.cornerRadius = 15
         return view
     }()
     
     private let hotelDetailView: HotelDetailContentView = {
         let view = HotelDetailContentView()
+        view.layer.cornerRadius = 15
         return view
     }()
     
     private let hoteBottom: HotelBottomView = {
         let view = HotelBottomView()
+        view.layer.cornerRadius = 15
         return view
     }()
     
@@ -108,6 +111,7 @@ extension HotelViewController {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemGray
         view.addSubview(scrollViewH)
+        scrollViewH.contentInsetAdjustmentBehavior = .never
         scrollViewH.addSubview(contentView)
         scrollViewH.addSubview(hotelDetailView)
         scrollViewH.addSubview(hoteBottom)
@@ -116,34 +120,33 @@ extension HotelViewController {
     
     private func setUpConstraints() {
         scrollViewH.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-//            make.top.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//            make.leading.equalToSuperview()
-//            make.bottom.equalTo(hoteBottom.snp.top).offset(-12)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.equalTo(scrollViewH.snp.top)
+            make.leading.equalTo(scrollViewH.snp.leading)
+            make.trailing.equalTo(scrollViewH.snp.trailing)
             make.width.equalTo(scrollViewH.snp.width)
-            make.height.equalTo(500)
+            make.height.equalTo(520)
         }
         
         hotelDetailView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalTo(scrollViewH.snp.leading)
+            make.trailing.equalTo(scrollViewH.snp.trailing)
             make.width.equalTo(scrollViewH.snp.width)
-            // Set a height constraint only if you know the content height
-            // If the content is dynamic, you might want to remove this
             make.height.equalTo(480)
-            // This is the key part: the bottom of the last view should define the scroll view's content size
-            make.bottom.equalToSuperview()
         }
         
         hoteBottom.snp.makeConstraints { make in
             make.top.equalTo(hotelDetailView.snp.bottom).offset(12)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalTo(scrollViewH.snp.leading)
+            make.trailing.equalTo(scrollViewH.snp.trailing)
+            make.bottom.equalTo(scrollViewH.snp.bottom) // Important to define scrollable content size
             make.height.equalTo(88)
         }
     }

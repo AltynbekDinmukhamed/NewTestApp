@@ -94,7 +94,7 @@ extension HotelContentView {
     private func setUpConstraints() {
         titleLbl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(19)
+            make.top.equalToSuperview().offset(60)
         }
                         
         imageCarouselView.snp.makeConstraints { make in
