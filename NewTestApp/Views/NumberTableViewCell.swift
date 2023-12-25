@@ -92,6 +92,8 @@ class NumberTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         carouselImageView.layoutIfNeeded()
+        let bottomPadding: CGFloat = 10
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: bottomPadding, right: 0))
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -230,7 +232,7 @@ extension NumberTableViewCell {
         }
         
         chooseBtn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-8)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.height.equalTo(48)

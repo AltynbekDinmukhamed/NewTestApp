@@ -67,6 +67,7 @@
 		56F75D252B389C4700C71121 /* TotalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceView.swift; sourceTree = "<group>"; };
 		56F75D272B38A5A500C71121 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		56F75D292B38E15100C71121 /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
+		56F75D2B2B39ADF300C71121 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		56F8557F2B2DAB6500588B54 /* NewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F855822B2DAB6500588B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56F855842B2DAB6500588B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		56F855762B2DAB6500588B54 = {
 			isa = PBXGroup;
 			children = (
+				56F75D2B2B39ADF300C71121 /* ReadMe.md */,
 				56F855812B2DAB6500588B54 /* NewTestApp */,
 				56F855802B2DAB6500588B54 /* Products */,
 				DDE456D71E14769116C617AE /* Pods */,

@@ -78,9 +78,10 @@ class BookingViewController: UIViewController {
         super.viewDidLoad()
         setUpViews()
         fetchBookData()
-        payBottomView.openVc = { [weak self] in
-            self?.openVc()
-        }
+//        payBottomView.openVc = { [weak self] in
+//            self?.openVc()
+//        }
+        infoAboutCustomer.setupHideKeyboardOnTap(viewController: self)
     }
     
     //MARK: -functions-
@@ -114,6 +115,9 @@ extension BookingViewController {
     private func setUpViews() {
         title = "Бронирование"
         view.backgroundColor = .white
+        payBottomView.openVc = { [weak self] in
+            self?.checkDataAndProceedToPayment()
+        }
         view.addSubview(scrollView)
         view.addSubview(payBottomView)
         scrollView.addSubview(contentView)
@@ -183,5 +187,37 @@ extension BookingViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(contentView).offset(-8)
         }
+    }
+}
+
+extension BookingViewController {
+    private func checkDataAndProceedToPayment() {
+        var isDataValid = true
+
+        // Проверка данных в infoAboutCustomer
+        if !infoAboutCustomer.isDataValid() {
+            isDataValid = false
+        }
+        // Проверка данных в passengerInfoField
+        if !passengerInfoField.isDataValid() {
+            isDataValid = false
+        }
+        // Проверка данных в secondPassengerInfoField
+        if !secondPassengerInfoField.isDataValid() {
+            isDataValid = false
+        }
+        // Если данные валидны, переходим к экрану оплаты
+        if isDataValid {
+            openVc()
+        } else {
+            // Показываем ошибку
+            showErrorAlert()
+        }
+    }
+    
+    private func showErrorAlert() {
+        let alert = UIAlertController(title: "Ошибка", message: "Не все поля заполнены корректно", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -269,4 +269,20 @@ extension PassengerInfoField {
     }
 }
 
+extension PassengerInfoField {
+    func isDataValid() -> Bool {
+        // Проверка всех текстовых полей
+        // Пример проверки одного поля
+        if let name = nameTxtField.text, name.isEmpty {
+            nameTxtField.backgroundColor = UIColor.red.withAlphaComponent(0.15)
+            return false
+        }
+
+        // Проверка других полей
+        // ...
+
+        // Если все в порядке, вернуть true
+        return true
+    }
+}
 

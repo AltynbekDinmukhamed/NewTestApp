@@ -23,6 +23,7 @@ class BottomButtonView: UIView {
     }()
     
     var openVc: (() -> Void)?
+    var popBack: (()-> Void)?
     //MARK: -LifeCycle-
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,5 +58,6 @@ extension BottomButtonView {
 extension BottomButtonView {
     @objc private func payTapped(_ sender: UIButton) {
         openVc?()
+        popBack?()
     }
 }

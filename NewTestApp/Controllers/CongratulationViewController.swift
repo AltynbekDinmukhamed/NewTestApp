@@ -49,9 +49,15 @@ class CongratulationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        bottomView.popBack = { [weak self] in
+            self?.popBack()
+        }
     }
     
     //MARK: -Functions-
+    private func popBack() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
     //MARK: -Extesnions SetUpViews()-

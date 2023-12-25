@@ -14,6 +14,8 @@ class NumberViewController: UIViewController {
     let table: UITableView = {
         let table = UITableView()
         table.backgroundColor = .systemGray
+        table.separatorColor = .clear
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         table.register(NumberTableViewCell.self, forCellReuseIdentifier: "NumberTableViewCell")
         return table
     }()
@@ -63,6 +65,7 @@ extension NumberViewController {
         view.backgroundColor = .white
         navigationController?.isNavigationBarHidden = false
         view.addSubview(table)
+        table.contentInsetAdjustmentBehavior = .never
         setUpConstraints()
     }
     

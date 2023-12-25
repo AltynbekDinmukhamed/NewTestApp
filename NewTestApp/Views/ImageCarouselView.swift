@@ -56,14 +56,6 @@ class ImageCarouselView: UIView, UIScrollViewDelegate {
                 make.top.bottom.equalToSuperview()
                 make.width.equalTo(scrollView.frame.width)
                 make.height.equalToSuperview()
-                    
-//                if index == 0 {
-//                    // First imageView
-//                    make.leading.equalToSuperview()
-//                } else {
-//                    // Subsequent imageViews
-//                    make.leading.equalTo(imageViews[index - 1].snp.trailing)
-//                }
                 
                 if let previousImageView = previousImageView {
                     make.leading.equalTo(previousImageView.snp.trailing)
@@ -72,11 +64,6 @@ class ImageCarouselView: UIView, UIScrollViewDelegate {
                 }
                 
                 previousImageView = imageView
-                    
-//                if index == imageViews.count - 1 {
-//                    // Last imageView
-//                    make.trailing.equalToSuperview()
-//                }
             }
         }
             
@@ -135,16 +122,4 @@ extension ImageCarouselView {
         pageControl.currentPage = Int(pageIndex)
     }
 }
-
-//class ImageCarouselView: UIScrollViewDelegate {  // Declare conformance here
-//    // ...
-//    // Other properties and methods
-//
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let pageIndex = round(scrollView.contentOffset.x / frame.width)
-//        pageControl.currentPage = Int(pageIndex)
-//    }
-//
-//    // ...
-//}
 
